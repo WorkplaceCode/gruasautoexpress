@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grúas Auto Express | Servicio de Grúas 24 Horas</title>
+  <meta name="description" content="Servicio de grúas 24 horas. Traslado de vehículos livianos, motocicletas, maquinaria y carga pesada. Cobertura amplia y atención inmediata.">
+
+  <!-- Íconos (Font Awesome, vía CDN permitido) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================
+       HEADER / NAVEGACIÓN
+       Ajustes futuros: cambiar logo, textos del menú, o el
+       número/link de WhatsApp del botón superior.
+  ========================================================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+
+      <a href="#inicio" class="logo">
+        <img src="assets/logo.png" alt="Grúas Auto Express" class="logo__img">
+        <span class="logo__text">
+          <span class="logo__title">GRÚAS</span>
+          <span class="logo__subtitle">AUTO EXPRESS</span>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa (solo visible en móvil) -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menú principal: cada enlace apunta al id de su sección -->
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+          <li><a href="#cobertura" class="nav__link">Cobertura</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="header__whatsapp" aria-label="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO / INICIO
+       Ajustes futuros: cambiar titular, texto de bajada,
+       imagen de fondo del camión y datos de contacto rápido.
+  ========================================================== -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+
+      <div class="hero__content">
+        <h1 class="hero__title">
+          SERVICIO DE GRÚAS<br>
+          <span class="hero__title--accent">24 HORAS</span><br>
+          A TU DISPOSICIÓN
+        </h1>
+        <p class="hero__text">Rápidos, seguros y confiables. Llegamos donde nos necesites.</p>
+
+        <ul class="hero__features">
+          <li><i class="fa-regular fa-clock"></i> Atención 24/7<br><small>365 días del año</small></li>
+          <li><i class="fa-solid fa-shield-halved"></i> Seguridad<br><small>y confianza</small></li>
+          <li><i class="fa-solid fa-location-dot"></i> Cobertura<br><small>amplia</small></li>
+        </ul>
+
+        <div class="hero__cta">
+          <a href="tel:+56965058576" class="btn btn--primary">
+            <i class="fa-solid fa-phone"></i>
+            <span>Llámanos ahora<br><strong>+569 6567 7806</strong></span>
+          </a>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="btn btn--whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Escríbenos por</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <!-- Reemplazar por foto real del camión grúa -->
+        <img src="assets/hero-truck.jpg" alt="Camión grúa Auto Express trasladando un vehículo" class="hero__img">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SERVICIOS
+       Ajustes futuros: agregar/quitar tarjetas de servicio,
+       cambiar íconos, textos o imágenes de cada tarjeta.
+  ========================================================== -->
+  <section class="services" id="servicios">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">Nuestros</p>
+        <h2 class="section-heading__title">SERVICIOS</h2>
+        <p class="section-heading__text">Soluciones de transporte y asistencia para cada necesidad</p>
+      </div>
+
+      <div class="services__grid">
+
+        <article class="service-card">
+          <div class="service-card__media">
+            <img src="assets/service-vehiculos-livianos.jpg" alt="Traslado de vehículos livianos">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__icon"><i class="fa-solid fa-car"></i></span>
+            <h3>Traslado de vehículos livianos</h3>
+            <p>Trasladamos automóviles, SUV y camionetas de forma rápida, segura y con cobertura 24/7.</p>
+          </div>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__media">
+            <img src="assets/service-motocicletas.jpg" alt="Traslado de motocicletas">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__icon"><i class="fa-solid fa-motorcycle"></i></span>
+            <h3>Traslado de motocicletas</h3>
+            <p>Transporte seguro de motos de todas las cilindradas. Cuidado especializado para tu vehículo.</p>
+          </div>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__media">
+            <img src="assets/service-maquinaria.jpg" alt="Transporte de maquinaria">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__icon"><i class="fa-solid fa-truck-front"></i></span>
+            <h3>Transporte de maquinaria</h3>
+            <p>Traslado de maquinarias varias, equipos industriales y grúa horquilla. Seguridad y experiencia.</p>
+          </div>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__media">
+            <img src="assets/service-carga-pesada.jpg" alt="Transporte de carga pesada">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__icon"><i class="fa-solid fa-truck-ramp-box"></i></span>
+            <h3>Transporte de carga pesada</h3>
+            <p>Transporte de carga pesada y sobredimensionada a nivel nacional. Carga segura y puntual.</p>
+          </div>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__media">
+            <img src="assets/service-remolque-camiones.jpg" alt="Remolque de camiones">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__icon"><i class="fa-solid fa-truck"></i></span>
+            <h3>Remolque de camiones</h3>
+            <p>Remolque de camiones averiados o accidentados. Equipos preparados para cualquier situación.</p>
+          </div>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__media">
+            <img src="assets/service-remolque-buses.jpg" alt="Remolque de buses">
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__icon"><i class="fa-solid fa-bus"></i></span>
+            <h3>Remolque de buses</h3>
+            <p>Servicio de remolque para buses, microbuses y buses de turismo. Atención rápida y profesional.</p>
+          </div>
+          <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </article>
+
+      </div>
+
+      <!-- Tarjeta ancha de asistencia general -->
+      <article class="service-wide">
+        <div class="service-wide__media">
+          <img src="assets/service-asistencia.jpg" alt="Asistencia en general">
+        </div>
+        <div class="service-wide__body">
+          <span class="service-card__icon"><i class="fa-solid fa-wrench"></i></span>
+          <h3>Asistencia en general</h3>
+          <p>Asistencia general, rescate de vehículos, apoyo en accidentes y más. Estamos listos para ayudar cuando nos necesites.</p>
+        </div>
+        <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="service-card__whatsapp" aria-label="Consultar por WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ¿POR QUÉ ELEGIRNOS? (parte de "Nosotros")
+       Ajustes futuros: agregar/quitar razones, cambiar íconos.
+  ========================================================== -->
+  <section class="why" id="nosotros">
+    <div class="container">
+
+      <div class="section-heading section-heading--dark">
+        <h2 class="section-heading__title">¿POR QUÉ <span class="text-accent">ELEGIRNOS</span>?</h2>
+      </div>
+
+      <div class="why__grid">
+        <div class="why__item">
+          <span class="why__icon"><i class="fa-regular fa-clock"></i></span>
+          <h3>Atención 24/7</h3>
+          <p>Disponibles todos los días del año, a cualquier hora.</p>
+        </div>
+        <div class="why__item">
+          <span class="why__icon"><i class="fa-solid fa-location-dot"></i></span>
+          <h3>Cobertura amplia</h3>
+          <p>Llegamos a todo Santiago y regiones.</p>
+        </div>
+        <div class="why__item">
+          <span class="why__icon"><i class="fa-solid fa-shield-halved"></i></span>
+          <h3>Seguridad garantizada</h3>
+          <p>Equipos modernos y personal altamente capacitado.</p>
+        </div>
+        <div class="why__item">
+          <span class="why__icon"><i class="fa-solid fa-dollar-sign"></i></span>
+          <h3>Precios justos</h3>
+          <p>Cotizaciones claras y sin costos ocultos.</p>
+        </div>
+        <div class="why__item">
+          <span class="why__icon"><i class="fa-regular fa-thumbs-up"></i></span>
+          <h3>Experiencia y confianza</h3>
+          <p>Años de experiencia que respaldan nuestro servicio.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       COBERTURA (banner de llamado a la acción)
+       Ajustes futuros: cambiar número de teléfono, textos
+       o el mapa/zona de cobertura si se agrega uno.
+  ========================================================== -->
+  <section class="cta-banner" id="cobertura">
+    <div class="container cta-banner__inner">
+      <a href="tel:+569 65058576" class="cta-banner__item">
+        <span class="cta-banner__icon"><i class="fa-solid fa-phone"></i></span>
+        <span>
+          <strong>LLÁMANOS AHORA</strong>
+          <span class="cta-banner__phone">+569 65058576</span>
+          <small>Atención inmediata 24/7</small>
+        </span>
+      </a>
+      <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="cta-banner__item cta-banner__item--whatsapp">
+        <span>
+          <strong>ESCRÍBENOS POR WHATSAPP</strong>
+          <small>Estamos listos para ayudarte en cualquier momento.</small>
+        </span>
+        <span class="cta-banner__icon cta-banner__icon--whatsapp"><i class="fa-brands fa-whatsapp"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER / CONTACTO
+       Ajustes futuros: actualizar enlaces, datos de contacto,
+       redes sociales y el año del copyright.
+  ========================================================== -->
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="#inicio" class="logo logo--footer">
+          <img src="assets/logo.png" alt="Grúas Auto Express" class="logo__img">
+          <span class="logo__text">
+            <span class="logo__title">GRÚAS</span>
+            <span class="logo__subtitle">AUTO EXPRESS</span>
+          </span>
+        </a>
+        <p>Servicio de grúas 24 horas a tu disposición.<br>Rápidos, seguros y confiables.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#cobertura">Cobertura</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Traslado de vehículos livianos</a></li>
+          <li><a href="#servicios">Traslado de motocicletas</a></li>
+          <li><a href="#servicios">Transporte de maquinaria</a></li>
+          <li><a href="#servicios">Transporte de carga pesada</a></li>
+          <li><a href="#servicios">Remolque de camiones</a></li>
+          <li><a href="#servicios">Remolque de buses</a></li>
+          <li><a href="#servicios">Asistencia en general</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul class="footer__contact">
+          <li><i class="fa-solid fa-phone"></i> +569 65058576</li>
+          <li><i class="fa-solid fa-envelope"></i> contacto@gruasautoexpress.cl</li>
+          <li><i class="fa-solid fa-location-dot"></i> Santiago, Chile</li>
+          <li><i class="fa-regular fa-clock"></i> Atención 24/7<br>365 días del año</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> GRÚAS AUTO EXPRESS - Todos los derechos reservados.</p>
+      <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (visible siempre) -->
+  <a href="https://wa.me/56965058576" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

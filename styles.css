@@ -1,0 +1,535 @@
+/* =========================================================
+   VARIABLES GLOBALES
+   Ajustes futuros: cambiar aquí colores, fuentes o radios
+   de borde para que se actualicen en todo el sitio.
+========================================================= */
+:root{
+  --color-bg-dark: #0c0c0c;
+  --color-bg-dark-alt: #161616;
+  --color-red: #e2141e;
+  --color-red-dark: #a80f17;
+  --color-white: #ffffff;
+  --color-gray-light: #f4f4f4;
+  --color-gray-text: #b9b9b9;
+  --color-whatsapp: #25d366;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --shadow-card: 0 12px 30px rgba(0,0,0,.35);
+  --container-w: 1180px;
+}
+
+/* =========================================================
+   RESET / BASE
+========================================================= */
+*, *::before, *::after{ box-sizing: border-box; margin: 0; padding: 0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: var(--font-body);
+  background: var(--color-bg-dark);
+  color: var(--color-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img{ max-width: 100%; display: block; }
+a{ text-decoration: none; color: inherit; }
+ul{ list-style: none; }
+button{ font: inherit; cursor: pointer; border: none; background: none; }
+
+.container{
+  width: 100%;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.text-accent{ color: var(--color-red); }
+
+/* Botones genéricos reutilizados en varias secciones */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform .2s ease, filter .2s ease;
+}
+.btn:hover{ transform: translateY(-2px); filter: brightness(1.08); }
+.btn i{ font-size: 22px; }
+.btn--primary{ background: var(--color-red); color: var(--color-white); }
+.btn--whatsapp{ background: var(--color-whatsapp); color: var(--color-white); }
+
+/* Encabezados reutilizables de sección */
+.section-heading{ text-align: center; margin-bottom: 48px; }
+.section-heading__eyebrow{
+  color: var(--color-red);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.section-heading__title{
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.section-heading__text{
+  color: var(--color-gray-text);
+  margin-top: 8px;
+  font-size: 15px;
+}
+.section-heading--dark .section-heading__title{ color: var(--color-bg-dark); }
+
+/* =========================================================
+   HEADER / NAVEGACIÓN
+   Ajustes futuros: alto del header, colapso a hamburguesa,
+   color de hover de los enlaces.
+========================================================= */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.header__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  gap: 16px;
+}
+
+.logo{ display: flex; align-items: center; gap: 10px; }
+.logo__img{ height: 40px; width: auto; }
+.logo__text{ display: flex; flex-direction: column; line-height: 1.1; }
+.logo__title{ font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+.logo__subtitle{ font-family: var(--font-display); font-weight: 600; font-size: 12px; color: var(--color-red); letter-spacing: 2px; }
+
+.nav__list{ display: flex; gap: 32px; }
+.nav__link{
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.nav__link:hover,
+.nav__link.is-active{
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.header__whatsapp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+/* Botón hamburguesa: oculto en escritorio */
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+}
+.nav-toggle span{
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-white);
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* =========================================================
+   HERO / INICIO
+   Ajustes futuros: proporciones de imagen vs. texto,
+   tamaño del titular, colores de las tarjetas de features.
+========================================================= */
+.hero{
+  padding: 64px 0 72px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(226,20,30,.12), transparent 55%),
+    var(--color-bg-dark);
+}
+
+.hero__inner{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero__title{
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6vw, 58px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: .5px;
+}
+.hero__title--accent{ color: var(--color-red); }
+
+.hero__text{
+  margin-top: 18px;
+  color: var(--color-gray-text);
+  font-size: 16px;
+  max-width: 46ch;
+}
+
+.hero__features{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 28px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.hero__features li{ display: flex; flex-direction: column; gap: 6px; }
+.hero__features i{ color: var(--color-red); font-size: 18px; }
+.hero__features small{ color: var(--color-gray-text); font-weight: 500; }
+
+.hero__cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+.hero__cta .btn span{ line-height: 1.3; }
+.hero__cta .btn strong{ font-size: 17px; }
+
+.hero__media{
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.hero__img{ width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+/* =========================================================
+   SERVICIOS
+   Ajustes futuros: número de columnas del grid, tamaño de
+   las imágenes de las tarjetas, color del ícono circular.
+========================================================= */
+.services{ padding: 88px 0 60px; background: var(--color-bg-dark); }
+
+.services__grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.service-card{
+  position: relative;
+  background: var(--color-bg-dark-alt);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease;
+}
+.service-card:hover{ transform: translateY(-6px); }
+
+.service-card__media{ aspect-ratio: 16 / 10; overflow: hidden; }
+.service-card__media img{ width: 100%; height: 100%; object-fit: cover; }
+
+.service-card__body{ padding: 22px 24px 26px; }
+
+.service-card__icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+.service-card__body h3{
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.service-card__body p{ color: var(--color-gray-text); font-size: 14px; }
+
+.service-card__whatsapp{
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 6px 16px rgba(37,211,102,.4);
+}
+
+/* Tarjeta ancha de "Asistencia en general" */
+.service-wide{
+  position: relative;
+  background: var(--color-bg-dark-alt);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+}
+.service-wide__media{ min-height: 220px; }
+.service-wide__media img{ width: 100%; height: 100%; object-fit: cover; }
+.service-wide__body{ padding: 32px; align-self: center; }
+.service-wide__body h3{
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.service-wide__body p{ color: var(--color-gray-text); max-width: 46ch; }
+
+/* =========================================================
+   ¿POR QUÉ ELEGIRNOS? / NOSOTROS
+   Ajustes futuros: número de columnas, colores de fondo
+   (actualmente claro para contrastar con el resto del sitio).
+========================================================= */
+.why{ background: var(--color-gray-light); color: var(--color-bg-dark); padding: 76px 0; }
+
+.why__grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.why__item h3{
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 14px 0 8px;
+}
+.why__item p{ font-size: 13px; color: #666; }
+
+.why__icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-size: 22px;
+}
+
+/* =========================================================
+   BANNER CTA / COBERTURA
+   Ajustes futuros: alternar colores de cada mitad, tamaño
+   de teléfono, o agregar un mapa de cobertura debajo.
+========================================================= */
+.cta-banner{ background: var(--color-red); }
+
+.cta-banner__inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cta-banner__item{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 24px;
+}
+.cta-banner__item--whatsapp{
+  background: var(--color-bg-dark);
+  justify-content: space-between;
+}
+
+.cta-banner__icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-red);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.cta-banner__icon--whatsapp{ background: var(--color-whatsapp); color: var(--color-white); }
+
+.cta-banner__item strong{ display: block; font-size: 13px; letter-spacing: 1px; }
+.cta-banner__phone{ display: block; font-family: var(--font-display); font-size: 26px; font-weight: 700; }
+.cta-banner__item small{ display: block; opacity: .85; font-size: 12px; margin-top: 4px; }
+
+/* =========================================================
+   FOOTER / CONTACTO
+   Ajustes futuros: número de columnas, íconos sociales,
+   año del copyright (se actualiza solo vía script.js).
+========================================================= */
+.footer{ background: var(--color-bg-dark-alt); padding-top: 64px; }
+
+.footer__inner{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.footer__brand p{ color: var(--color-gray-text); font-size: 14px; margin: 16px 0 20px; max-width: 32ch; }
+
+.footer__social{ display: flex; gap: 12px; }
+.footer__social a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  transition: background .2s ease;
+}
+.footer__social a:hover{ background: var(--color-red); }
+
+.footer__col h4{
+  font-family: var(--font-display);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+.footer__col ul li{ margin-bottom: 10px; font-size: 14px; color: var(--color-gray-text); }
+.footer__col ul li a:hover{ color: var(--color-red); }
+.footer__contact li{ display: flex; align-items: flex-start; gap: 10px; }
+.footer__contact i{ color: var(--color-red); margin-top: 3px; }
+
+.footer__bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  font-size: 13px;
+  color: var(--color-gray-text);
+}
+
+.back-to-top{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+========================================================= */
+.whatsapp-float{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 10px 24px rgba(37,211,102,.45);
+  z-index: 90;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+========================================================= */
+@media (max-width: 1024px){
+  .hero__inner{ grid-template-columns: 1fr; }
+  .hero__media{ order: -1; }
+  .services__grid{ grid-template-columns: repeat(2, 1fr); }
+  .why__grid{ grid-template-columns: repeat(3, 1fr); row-gap: 36px; }
+  .service-wide{ grid-template-columns: 1fr; }
+  .service-wide__media{ aspect-ratio: 16/9; }
+}
+
+/* =========================================================
+   RESPONSIVE — MÓVIL (≤ 768px)
+   Aquí se activa el menú hamburguesa y se apilan las
+   columnas a una sola.
+========================================================= */
+@media (max-width: 768px){
+
+  .nav-toggle{ display: flex; }
+
+  .nav{
+    position: fixed;
+    inset: 76px 0 0 0;
+    background: rgba(10,10,10,.98);
+    transform: translateY(-110%);
+    opacity: 0;
+    transition: transform .3s ease, opacity .3s ease;
+    padding: 32px 24px;
+  }
+  .nav.is-open{ transform: translateY(0); opacity: 1; }
+
+  .nav__list{ flex-direction: column; gap: 24px; }
+  .nav__link{ font-size: 18px; }
+
+  .hero{ padding: 40px 0 56px; text-align: left; }
+  .hero__cta{ flex-direction: column; }
+  .hero__features{ gap: 20px; }
+
+  .services{ padding: 60px 0 40px; }
+  .services__grid{ grid-template-columns: 1fr; }
+
+  .why__grid{ grid-template-columns: 1fr 1fr; }
+
+  .cta-banner__inner{ grid-template-columns: 1fr; }
+
+  .footer__inner{ grid-template-columns: 1fr 1fr; }
+  .footer__brand{ grid-column: 1 / -1; }
+
+  .footer__bottom{ flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* =========================================================
+   RESPONSIVE — MÓVIL PEQUEÑO (≤ 480px)
+========================================================= */
+@media (max-width: 480px){
+  .why__grid{ grid-template-columns: 1fr; }
+  .footer__inner{ grid-template-columns: 1fr; }
+  .cta-banner__item{ flex-direction: column; text-align: center; }
+  .whatsapp-float{ width: 48px; height: 48px; font-size: 24px; bottom: 16px; right: 16px; }
+}
